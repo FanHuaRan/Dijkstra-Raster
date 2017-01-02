@@ -18,7 +18,7 @@ public class PointNode {
 	public void setY(int y){
 		this.y=y;
 	}
-	public void setCount(Float count){
+	public void setCount(float count){
 		this.count=count;
 	}
 	public int getX(){

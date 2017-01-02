@@ -11,9 +11,9 @@ import pers.fhr.dijkstraraster.model.PointNode;
  *
  */
 public class EngineUtil {
-	private static final float MAXDIS=1000f;
+	private static final float MAXDIS=1000000f;
 	/**
-	 * 构建邻接矩阵
+	 * 根据节点数组构建邻接矩阵
 	 * @param nodes
 	 * @return
 	 */
@@ -64,8 +64,15 @@ public class EngineUtil {
 			}
 		}
 		return null;
-		
 	}
+	/**
+	 * 处理两个结点之间的权重关系
+	 * @param nodes
+	 * @param cost
+	 * @param i
+	 * @param j
+	 * @param flag
+	 */
 	private static void DealTwoPoint(List<PointNode> nodes,List<List<Float>> cost,int i,int j,int flag){
 		PointNode node1=nodes.get(i);
 		PointNode node2=nodes.get(j);
@@ -93,5 +100,28 @@ public class EngineUtil {
 			}
 		}
 		return -1;
+	}
+	/**
+	 * 将二维数组转换为节点数组
+	 * 如果元素值为1，则该位置无节点
+	 * @param arrays
+	 * @return
+	 */
+	public static List<PointNode> convert2DArrayToPointNodes(float [][] arrays){
+		List<PointNode> pointNodes=new ArrayList<>();
+		if(arrays==null){
+			return null;
+		}
+		for(int i=0;i<arrays.length;i++){
+			float[]row=arrays[i];
+			for(int j=0;j<row.length;j++){
+				float value=row[j];
+				if(value>=0){
+					PointNode node=new PointNode(j, i,value);
+					pointNodes.add(node);
+				}
+			}
+		}
+		return pointNodes;
 	}
 }
