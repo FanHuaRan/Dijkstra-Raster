@@ -51,7 +51,7 @@ public class EngineUtil {
 				DealTwoPoint(nodes,cost,i,index5,0);
 			}
 			int index6=findNode(nodes,node.getX()-1,node.getY()+1);
-			if(index1!=-1){
+			if(index6!=-1){
 				DealTwoPoint(nodes,cost,i,index6,0);
 			}
 			int index7=findNode(nodes,node.getX()+1,node.getY()-1);
@@ -63,7 +63,7 @@ public class EngineUtil {
 				DealTwoPoint(nodes,cost,i,index8,0);
 			}
 		}
-		return null;
+		return cost;
 	}
 	/**
 	 * 处理两个结点之间的权重关系

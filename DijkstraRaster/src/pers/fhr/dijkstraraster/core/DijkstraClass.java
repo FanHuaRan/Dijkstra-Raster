@@ -49,7 +49,7 @@ public class DijkstraClass implements IDijkstra {
                  if (arrayFlag.get(i) == 0 && distances.get(u) + cost.get(u).get(i)< distances.get(i))
                  {
                 	 distances.set(i, distances.get(u) + cost.get(u).get(i));
-                     path.get(u).clear();
+                     path.get(i).clear();
                      for (int k = 0; k < path.get(u).size(); k++)
                      {
                          path.get(i).add(path.get(u).get(k));
@@ -118,7 +118,7 @@ public class DijkstraClass implements IDijkstra {
                  if (arrayFlag.get(i) == 0 && distances.get(u) + cost.get(u).get(i)< distances.get(i))
                  {
                 	 distances.set(i, distances.get(u) + cost.get(u).get(i));
-                     path.get(u).clear();
+                     path.get(i).clear();
                      for (int k = 0; k < path.get(u).size(); k++)
                      {
                          path.get(i).add(path.get(u).get(k));

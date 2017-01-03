@@ -1,6 +1,5 @@
 package pers.fhr.dijkstraraster.service;
 
-import java.lang.reflect.Array;
 import java.util.List;
 
 import pers.fhr.dijkstraraster.component.EngineUtil;
@@ -18,7 +17,6 @@ public class Distance implements IDistanceService{
 		Float dis = null;
 		List<Integer> path=dijkstra.dijkstraMethod(cost, start,end,dis);
 		return path.stream().map(p->nodes.get(p)).toArray();
-
 	}
 
 }
